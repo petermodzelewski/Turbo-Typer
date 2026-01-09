@@ -82,19 +82,18 @@ Projekt jest skonfigurowany do pracy w środowisku Node.js.
     ```bash
     npm run build
     ```
-    Pliki wynikowe znajdą się w folderze `dist`.
+    Pliki wynikowe znajdą się w folderze `docs`.
 
 ---
 
 ## 🌐 GitHub Pages Deployment
 
 1.  **Ustaw poprawną bazę Vite (`base`) dla repozytorium:**
-    W pliku `vite.config.ts` ustaw `base` na nazwę repozytorium, np. dla repo `Turbo-Typer`:
-    ```ts
-    export default defineConfig({
-      base: '/Turbo-Typer/',
-      // ...
-    })
+    Domyślnie build produkcyjny używa `/Turbo-Typer/` jako `base`. Jeśli chcesz
+    nadpisać wartość, ustaw zmienną środowiskową `VITE_BASE_PATH`, np. w pliku
+    `.env.production`:
+    ```bash
+    VITE_BASE_PATH=/Turbo-Typer/
     ```
 
 2.  **Włącz GitHub Pages w repozytorium:**
