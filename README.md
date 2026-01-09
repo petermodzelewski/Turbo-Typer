@@ -98,14 +98,14 @@ Projekt jest skonfigurowany do pracy w środowisku Node.js.
     ```
 
 2.  **Włącz GitHub Pages w repozytorium:**
-    W GitHub przejdź do **Settings → Pages** i w sekcji **Build and deployment** wybierz źródło **Deploy from a branch**. Ustaw gałąź, która będzie zawierać zbudowane pliki (np. `gh-pages` lub `main` z katalogiem `/docs`).
+    W GitHub przejdź do **Settings → Pages** i w sekcji **Build and deployment** wybierz źródło **Deploy from a branch**. Wybierz gałąź `main` i folder `/docs` (to jedyna opcja obok `/` w UI GitHub Pages).
 
 3.  **Zbuduj i opublikuj statyczne pliki:**
-    Zbuduj projekt lokalnie i wypchnij wynik do gałęzi, którą wybrałeś w kroku powyżej:
+    Zbuduj projekt lokalnie — build zapisuje wynik do katalogu `docs/`:
     ```bash
     npm run build
     ```
-    Następnie skopiuj zawartość `dist` do katalogu publikowanego przez GitHub Pages (np. `/` w gałęzi `gh-pages`) i wykonaj commit + push. GitHub Pages będzie serwować te statyczne pliki bez użycia GitHub Actions.
+    Następnie wykonaj commit + push. GitHub Pages będzie serwować statyczne pliki z `docs/` bez użycia GitHub Actions.
 
 ---
 

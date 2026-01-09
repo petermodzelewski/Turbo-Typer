@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
     root: '.', // Serve from the current directory
     publicDir: 'public',
     build: {
-      outDir: 'dist',
+      outDir: 'docs',
     },
     server: {
       open: true, // Automatically open browser
