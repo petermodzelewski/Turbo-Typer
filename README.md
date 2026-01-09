@@ -86,6 +86,30 @@ Projekt jest skonfigurowany do pracy w środowisku Node.js.
 
 ---
 
+## 🌐 GitHub Pages Deployment
+
+1.  **Ustaw poprawną bazę Vite (`base`) dla repozytorium:**
+    W pliku `vite.config.ts` ustaw `base` na nazwę repozytorium, np. dla repo `Turbo-Typer`:
+    ```ts
+    export default defineConfig({
+      base: '/Turbo-Typer/',
+      // ...
+    })
+    ```
+
+2.  **Włącz GitHub Pages w repozytorium:**
+    W GitHub przejdź do **Settings → Pages** i w sekcji **Build and deployment** wybierz **GitHub Actions** jako źródło.
+
+3.  **Uruchom build i deploy przez GitHub Actions:**
+    W workflow GitHub Actions użyj dokładnie tych poleceń do budowy:
+    ```bash
+    npm ci
+    npm run build
+    ```
+    Następnie opublikuj folder `dist` przez workflow GitHub Pages (np. `actions/upload-pages-artifact` + `actions/deploy-pages`).
+
+---
+
 ## 📂 Struktura Projektu
 
 *   `index.tsx`: Punkt wejścia aplikacji.
