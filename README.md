@@ -98,15 +98,14 @@ Projekt jest skonfigurowany do pracy w środowisku Node.js.
     ```
 
 2.  **Włącz GitHub Pages w repozytorium:**
-    W GitHub przejdź do **Settings → Pages** i w sekcji **Build and deployment** wybierz **GitHub Actions** jako źródło.
+    W GitHub przejdź do **Settings → Pages** i w sekcji **Build and deployment** wybierz źródło **Deploy from a branch**. Ustaw gałąź, która będzie zawierać zbudowane pliki (np. `gh-pages` lub `main` z katalogiem `/docs`).
 
-3.  **Uruchom build i deploy przez GitHub Actions:**
-    W workflow GitHub Actions użyj dokładnie tych poleceń do budowy:
+3.  **Zbuduj i opublikuj statyczne pliki:**
+    Zbuduj projekt lokalnie i wypchnij wynik do gałęzi, którą wybrałeś w kroku powyżej:
     ```bash
-    npm ci
     npm run build
     ```
-    Następnie opublikuj folder `dist` przez workflow GitHub Pages (np. `actions/upload-pages-artifact` + `actions/deploy-pages`).
+    Następnie skopiuj zawartość `dist` do katalogu publikowanego przez GitHub Pages (np. `/` w gałęzi `gh-pages`) i wykonaj commit + push. GitHub Pages będzie serwować te statyczne pliki bez użycia GitHub Actions.
 
 ---
 
